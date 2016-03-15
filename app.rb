@@ -14,14 +14,11 @@ end
 get '/play' do
   @name1 = session[:player_1_name]
   @name2 = session[:player_2_name]
-  @attacked = session[:attacked]
   erb(:play)
 end
 
-post '/attack' do
+get '/attack' do
   @name1 = session[:player_1_name]
   @name2 = session[:player_2_name]
-  # p @attacked = params[:attack]
-  session[:attacked] =params[:attack]
-  redirect '/play'
+  erb(:attack)
 end
