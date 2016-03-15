@@ -9,6 +9,6 @@ feature "name entry" do
     fill_in "player_2_name", :with => "boob"
     click_button "Submit"
 
-    expect(page).to have_text("ass vs. boob")
+    expect(page).to have_content "ass vs. boob"
   end
 end
