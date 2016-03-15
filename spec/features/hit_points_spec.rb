@@ -3,10 +3,7 @@ RSpec.feature "1. Display hitpoints", :type => :feature do
   let(:p2_hp) { '60' }
 
   scenario 'Page displays player2 hitpoints as text' do
-    visit '/'
-    fill_in(:player1, with: 'Misa')
-    fill_in(:player2, with: 'Pete')
-    click_button 'Enter Battle!!'
+    sign_in_and_play
     expect(page).to have_content "Pete HP: #{p2_hp}"
   end
 
