@@ -1,10 +1,13 @@
-<p><%= @player1_name %> vs. <%= @player2_name %></p>
+<div align="center" style="font-family:impact; font-size:30pt;">
+  <p><%= @player1_name %> vs. <%= @player2_name %></p>
 
+  <p><%= @player1_name %> HP: <%= @p1_hp %>/<%= Player::MAX_HP %></p>
 
-<p><%= @player1_name %> HP: <%= @p1_hp %>/<%= Player::MAX_HP %></p>
+  <p><%= @player2_name %> HP: <%= @p2_hp %>/<%= Player::MAX_HP %></p>
 
-<p><%= @player2_name %> HP: <%= @p2_hp %>/<%= Player::MAX_HP %></p>
+  <p><%= @current_player %>'s turn</p>
 
-<p><%= @current_player %>'s turn</p>
+  <img src="http://www.zooborns.com/.a/6a010535647bf3970b0120a895c8ea970b-800wi" height="130" width="200" />
 
-<p><a href='/attacked'>Attack!</a></p>
+  <p><a href='/attacked'>Attack!</a></p>
+</div>
