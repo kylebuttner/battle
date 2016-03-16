@@ -14,7 +14,7 @@ describe Game do
   describe "#attack" do
     it 'should call is_attacked on player' do
       expect(player_2).to receive :is_attacked
-      game.attack_player_2
+      game.attack(player_2)
     end
   end
 end
