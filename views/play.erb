@@ -1,3 +1,7 @@
 <%= @player1 %> vs. <%= @player2 %>
 
-<%= @player2 %> HP: 60
+<%= @player2 %> HP: <%= @p2_hp %>/<%= Battle::MAX_HP %>
+
+<form action='/damage' method='post'>
+<input id='p2_damage' type='submit' name=2 value='Attack P2'>
+</form>

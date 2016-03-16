@@ -1,10 +1,11 @@
-RSpec.feature "1. Display hitpoints", :type => :feature do
+RSpec.feature "1. Display P2 hitpoints", type: :feature do
 
-  let(:p2_hp) { '60' }
+  let(:max_hp) { Battle::MAX_HP }
+  let(:p2_hp) { Battle::MAX_HP }
 
-  scenario 'Page displays player2 hitpoints as text' do
+  scenario 'Page displays P2 HP as text' do
     sign_in_and_play
-    expect(page).to have_content "Pete HP: #{p2_hp}"
+    expect(page).to have_content "Pete HP: #{p2_hp}/#{max_hp}"
   end
 
 #   scenario '1.1 Page displays player2 hitpoints as progress bar' do
