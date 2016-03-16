@@ -2,6 +2,12 @@
 <h2> <%= @game.player_1.name %>: <%= @game.player_1.hp %> HP </h2>
 <h2> <%= @game.player_2.name %>: <%= @game.player_2.hp %> HP </h2>
 
+<% if @game.opponent_of(@current_player).hp == 0 %>
+<h3> <%= @game.opponent_of(@current_player).name.upcase %> LOST! </h3>
+<% end %>
+
+<% if @game.player_1.hp != 0 && @game.player_2.hp != 0 %>
 <form action="/play">
   <input type="submit" value="switch turns!">
 </form>
+<% end %>
