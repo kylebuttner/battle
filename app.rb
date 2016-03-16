@@ -33,7 +33,16 @@ class Battle < Sinatra::Base
     @game.attack(@game.opponent)
     @damaged_player = $game.current_player.name
     @damaged_player_hp = $game.current_player.hp
-    erb(:attacked)
+    if $game.player1.hp == 0 || $game.player2.hp == 0
+      redirect '/game_over'
+    else
+      erb(:attacked)
+    end
+  end
+
+  get '/game_over' do
+    @damaged_player = $game.current_player.name
+    erb(:game_over)
   end
 
   # start the server if ruby file executed directly
