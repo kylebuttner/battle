@@ -23,4 +23,15 @@ describe Game do
       expect(game.current_player).to eq player2
     end
   end
+
+  describe '#opponent' do
+    it 'should return Player 2 when game starts' do
+      expect(game.opponent).to eq player2
+    end
+
+    it 'should return Player 1 in even rounds' do
+      game.attack(player2)
+      expect(game.opponent).to eq player1
+    end
+  end
 end

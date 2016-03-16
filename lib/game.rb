@@ -21,4 +21,8 @@ class Game
   def current_player
     @round_count.odd? ? @players.first : @players.last
   end
+
+  def opponent
+    @round_count.even? ? @players.first : @players.last
+  end
 end
