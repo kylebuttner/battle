@@ -6,7 +6,8 @@ RSpec.feature '2. Attack P2', type: :features do
   scenario 'P1 attacks P2 and P2 loses HP' do
     sign_in_and_play
     visit '/play'
-    find_button('Attack P2').click
+    click_link('Attack P2')
+    visit '/attacked'
     expect(page).to have_content "Pete HP: #{p2_hp - single_attack}"
   end
 end

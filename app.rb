@@ -4,7 +4,6 @@ class Battle < Sinatra::Base
 
   MAX_HP = 60
   enable :sessions
-  @hp_count = 0
 
   get '/' do
     erb(:index)
@@ -23,12 +22,19 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  post '/play' do
-    p params[:player2]
-    session[:p2_damage] = MAX_HP - @hp_count
-    redirect '/play'
-  end
+  # post '/play' do
+  #   @p2_hp -= 2
+  #   p @p2_hp
+  #   redirect '/attacked'
+  # end
 
+  get '/attacked' do
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    @p2_hp = MAX_HP
+    @p2_hp -= 2
+    erb(:attacked)
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
