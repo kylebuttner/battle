@@ -3,7 +3,6 @@ require_relative './lib/player'
 
 class Battle < Sinatra::Base
 
-  MAX_HP = 60
   enable :sessions
 
   get '/' do
@@ -19,15 +18,14 @@ class Battle < Sinatra::Base
   get '/play' do
     @player1_name = $player1.name
     @player2_name = $player2.name
-    @p2_hp = MAX_HP
+    @p2_hp = $player2.hp
     erb(:play)
   end
 
   get '/attacked' do
     @player1_name = $player1.name
     @player2_name = $player2.name
-    @p2_hp = MAX_HP
-    @p2_hp -= 2
+    @p2_hp = $player2.receive_attack
     erb(:attacked)
   end
 
