@@ -14,7 +14,10 @@ describe Player do
     it 'shoud start with 100 HP' do
       expect(player.hp).to eq 100
     end
-    it 'should go down by 20 when attacked' do
+  end
+
+  describe '#is_attacked' do
+    it 'should reduce player hp by 20' do
       player.is_attacked
       expect(player.hp).to eq 80
     end
