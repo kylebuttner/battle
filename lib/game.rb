@@ -5,6 +5,10 @@ class Game
     @round_count = 1
   end
 
+  def store_self
+    @game = self
+  end
+
   def player1
     @players.first
   end
@@ -24,5 +28,9 @@ class Game
 
   def opponent
     @round_count.even? ? @players.first : @players.last
+  end
+
+  def any_dead?
+    player1.hp == 0 || player2.hp == 0
   end
 end

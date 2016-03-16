@@ -1,5 +1,5 @@
 class Player
-  MAX_HP = 6
+  MAX_HP = 60
   attr_reader :name, :hp
 
   def initialize(name)
