@@ -4,16 +4,6 @@ require_relative './lib/player'
 
 class Battle < Sinatra::Base
 
-  enable :sessions
-
-  def self.store_game=(game)
-    @game = game
-  end
-
-  def self.game
-    @game
-  end
-
   get '/' do
     erb(:index)
   end
@@ -21,7 +11,7 @@ class Battle < Sinatra::Base
   post '/names' do
     player1 = Player.new(params[:player1])
     player2 = Player.new(params[:player2])
-    self.class.store_game=Game.new(player1, player2)
+    Game.start(Game.new(player1, player2))
     redirect '/play'
   end
 
@@ -52,7 +42,7 @@ class Battle < Sinatra::Base
 
   helpers do
     def game
-      self.class.game
+      Game.current
     end
   end
 

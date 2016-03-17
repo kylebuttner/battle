@@ -1,10 +1,23 @@
 require 'game'
 
 describe Game do
-
   subject(:game) { described_class.new(player1, player2) }
   let(:player1) { double :player1 }
   let(:player2) { double :player2, receive_attack: nil }
+
+  describe "start" do
+    it "should store current instantce of Game" do
+      described_class.start(game)
+      expect(described_class.start(game)).to eq game
+    end
+  end
+
+  describe "current" do
+    it "should return the current instance of Game" do
+      described_class.start(game)
+      expect(described_class.current).to eq game
+    end
+  end
 
   describe '#attack' do
     it 'should let player receive attack' do

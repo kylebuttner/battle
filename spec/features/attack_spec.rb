@@ -1,6 +1,5 @@
-RSpec.feature '2. Attack P2', type: :features do
-
-  before(:each) do
+feature 'Attack' do
+  before do
     sign_in_and_play
     visit '/play'
     click_link('Attack!')

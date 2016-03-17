@@ -1,11 +1,21 @@
 class Game
 
+  @game = nil
+
   attr_reader :current_player
 
   def initialize(player1, player2)
     @players = [player1, player2]
     @current_player = player1
     @current_opponent = player2
+  end
+
+  def self.start(game)
+    @game = game
+  end
+
+  def self.current
+    @game
   end
 
   def store_self

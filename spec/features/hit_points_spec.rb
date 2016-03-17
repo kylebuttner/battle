@@ -1,5 +1,4 @@
-RSpec.feature "1. Display P2 hitpoints", type: :feature do
-
+feature "Display hitpoints" do
   let(:max_hp) { Player::MAX_HP }
   let(:p2_hp) { Player::MAX_HP }
 
