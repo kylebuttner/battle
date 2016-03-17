@@ -12,6 +12,14 @@ label {
   padding: 25px;
 }
 
+div a {
+  color: #CC9999;
+}
+
+div a:hover {
+  font-size: 35pt;
+}
+
 #names {
   margin: auto;
   width: 100%;
@@ -22,11 +30,17 @@ label {
 }
 
 button {
-   width:300px;
-   font-size:30pt;
-   opacity: 0.6;
-   font-family: impact;
-   border: none;
+  width: 300px;
+  font-size: 30pt;
+  opacity: 0.6;
+  font-family: impact;
+  border: none;
+}
+
+button:hover {
+  background: black;
+  color: white;
+  opacity: 0.6;
 }
 
 form {
