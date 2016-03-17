@@ -10,8 +10,9 @@ feature 'Attack' do
   end
 
   scenario 'P2 attacks P1 and P1 loses HP' do
+    click_button "Basic Attack"
     click_link('Next round!')
-    click_link('Attack!')
+    click_button('Basic Attack')
     expect(page).to have_content "Misa HP: 8"
   end
 end

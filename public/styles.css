@@ -6,10 +6,12 @@ body {
   font-family: impact;
   color: white;
 }
+
 label {
   font-size: 30pt;
   padding: 25px;
 }
+
 #names {
   margin: auto;
   width: 100%;
@@ -63,4 +65,12 @@ button[name="basic_attack"] {
 }
 button[name="random_attack"] {
   float: right;
+}
+
+/*game over page*/
+
+.play_again {
+    font-size: 30pt;
+    text-align: center;
+    padding: 35px 0 0 0;
 }
