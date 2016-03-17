@@ -7,7 +7,7 @@ class Player
     @hp = MAX_HP
   end
 
-  def receive_attack
-    @hp -= 2
+  def receive_attack(damage)
+    @hp -= damage
   end
 end

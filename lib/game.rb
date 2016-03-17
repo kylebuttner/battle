@@ -30,10 +30,6 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.receive_attack
-  end
-
   def switch_player
     @current_player = @players.select { |player| player != current_player }.pop
   end
@@ -43,6 +39,6 @@ class Game
   end
 
   def any_dead?
-    player1.hp == 0 || player2.hp == 0
+    player1.hp <= 0 || player2.hp <= 0
   end
 end

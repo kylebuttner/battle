@@ -16,9 +16,9 @@ describe Player do
   end
 
   describe "#receive_attack" do
-    it "shuold reduce player's HP upon attack" do
-      player.receive_attack
-      expect(player.hp).to eq Player::MAX_HP - 2
+    it "should reduce player's HP upon attack" do
+      player.receive_attack(Attack::BASIC_DAMAGE)
+      expect(player.hp).to eq Player::MAX_HP - Attack::BASIC_DAMAGE
     end
   end
 end

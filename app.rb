@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/game'
 require_relative './lib/player'
+require_relative './lib/attack'
 
 class Battle < Sinatra::Base
 
@@ -27,8 +28,14 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
+  post '/attack' do
+    type = "basic" if !!params[:basic_attack]
+    type = "random" if !!params[:random_attack]
+    Attack.run(game.current_opponent, type)
+    redirect '/attacked'
+  end
+
   get '/attacked' do
-    game.attack(game.current_opponent)
     @damaged_player = game.current_opponent.name
     @damaged_player_hp = game.current_opponent.hp
     game.switch_player
