@@ -38,9 +38,10 @@ class Battle < Sinatra::Base
   end
 
   get '/attacked' do
-    game.attack(game.opponent)
-    @damaged_player = game.current_player.name
-    @damaged_player_hp = game.current_player.hp
+    game.attack(game.current_opponent)
+    @damaged_player = game.current_opponent.name
+    @damaged_player_hp = game.current_opponent.hp
+    game.switch_player
     game.any_dead? ? redirect('/game_over') : erb(:attacked)
   end
 
