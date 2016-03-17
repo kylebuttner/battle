@@ -1,0 +1,66 @@
+body {
+  background-image: url('http://i.imgur.com/1jocz1D.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  font-family: impact;
+  color: white;
+}
+label {
+  font-size: 30pt;
+  padding: 25px;
+}
+#names {
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  left: 30px;
+  bottom: 30%;
+  text-align: center;
+}
+
+button {
+   width:300px;
+   font-size:30pt;
+   opacity: 0.6;
+   font-family: impact;
+   border: none;
+}
+
+form {
+  margin: auto;
+}
+
+/*play page*/
+
+.container {
+  margin: auto;
+  width: 75%;
+}
+
+#player1_hp {
+  float: left;
+  padding: 75px 0 0 0;
+}
+
+#player2_hp {
+  float: right;
+  padding: 75px 0 0 0;
+}
+
+.attack_pic {
+  height: 300px;
+  width: auto;
+  border-radius: 100%;
+}
+
+#player_turn {
+  padding: 50px 0 0 0;
+}
+
+button[name="basic_attack"] {
+  float: left;
+}
+button[name="random_attack"] {
+  float: right;
+}

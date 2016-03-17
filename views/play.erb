@@ -1,28 +1,39 @@
 <div align="center" style="font-family:impact; font-size:30pt;">
-  <p><%= @player1_name %> vs. <%= @player2_name %></p>
+  <h1><%= @player1_name %> vs. <%= @player2_name %></h1>
 
-  <p><%= @player1_name %> HP: <%= @p1_hp %>/<%= Player::MAX_HP %></p>
+  <div class="container">
+    <div id="player1_hp">
+      <h3><%= @player1_name %> HP: <%= @p1_hp %>/<%= Player::MAX_HP %></h3>
+    </div>
+    <img class="attack_pic" src="http://www.zooborns.com/.a/6a010535647bf3970b0120a895c8ea970b-800wi"/>
+    <div id="player2_hp">
+      <h3><%= @player2_name %> HP: <%= @p2_hp %>/<%= Player::MAX_HP %></h3>
+    </div>
+  </div>
 
-  <p><%= @player2_name %> HP: <%= @p2_hp %>/<%= Player::MAX_HP %></p>
 
-  <p>
-    <% if @current_player == @player1_name %>
-      <img src="http://orig02.deviantart.net/634f/f/2012/237/6/c/baby_fluffy_kitten_by_pikachuballoon-d5cdjsn.jpg" height="96" width="140">
-    <% else %>
-      <img src="http://apriorinaked.com/images/gallery/2815/blueboy3.jpg" height="96" width="96">
-    <% end %>
+<div class="container">
+  <div id="player_turn">
+    <div id="player_icon">
+      <% if @current_player == @player1_name %>
+        <img src="http://orig02.deviantart.net/634f/f/2012/237/6/c/baby_fluffy_kitten_by_pikachuballoon-d5cdjsn.jpg" height="96" width="140">
+      <% else %>
+        <img src="http://apriorinaked.com/images/gallery/2815/blueboy3.jpg" height="96" width="96">
+      <% end %>
+    </div>
     <%= @current_player %>'s turn
-  </p>
+  </div>
+</div>
 
-  <img src="http://www.zooborns.com/.a/6a010535647bf3970b0120a895c8ea970b-800wi" height="130" width="200" />
-
+<div class="container">
   <form action="/attack" method="post">
-    <input type="submit" value="Basic Attack" name="basic_attack">
+    <button type="submit" name="basic_attack">Basic Attack</button>
   </form>
 
   <form action="/attack" method="post">
-    <input type="submit" value="Random Attack" name="random_attack">
+    <button type="submit" name="random_attack">Random Attack</button>
   </form>
+</div>
 
   <!-- <p><a href='/attacked'>Attack!</a></p> -->
 </div>
