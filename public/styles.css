@@ -1,5 +1,5 @@
 body {
-  background-image: url('http://i.imgur.com/1jocz1D.jpg');
+  background-image: url('http://i.imgur.com/idKAUlp.png');
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -24,8 +24,7 @@ div a:hover {
   margin: auto;
   width: 100%;
   position: absolute;
-  left: 30px;
-  bottom: 30%;
+  bottom: 20%;
   text-align: center;
 }
 
@@ -35,6 +34,7 @@ button {
   opacity: 0.6;
   font-family: impact;
   border: none;
+  margin-top: 50px;
 }
 
 button:hover {
@@ -72,6 +72,11 @@ form {
 
 #player_turn {
   padding: 50px 0 0 0;
+}
+
+#player_turn img {
+  height: 100px;
+  width: auto;
 }
 
 button[name="basic_attack"] {

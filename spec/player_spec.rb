@@ -21,4 +21,10 @@ describe Player do
       expect(player.hp).to eq Player::MAX_HP - Attack::BASIC_DAMAGE
     end
   end
+
+  describe "#avatar" do
+    it 'should store a player avatar' do
+      expect(player).to respond_to :avatar
+    end
+  end
 end

@@ -10,21 +10,19 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    player1 = Player.new(params[:player1])
-    player2 = Player.new(params[:player2])
+    player1 = Player.new(params[:player1], "http://orig02.deviantart.net/634f/f/2012/237/6/c/baby_fluffy_kitten_by_pikachuballoon-d5cdjsn.jpg")
+    player2 = Player.new(params[:player2], "http://media.mydogspace.com.s3.amazonaws.com/wp-content/uploads/2013/08/puppy-500x350.jpg")
     Game.start(Game.new(player1, player2))
     redirect '/play'
   end
 
   before '/play' do
-    @player1_name = game.player1.name
-    @player2_name = game.player2.name
+    @player1 = game.player1
+    @player2 = game.player2
   end
 
   get '/play' do
-    @current_player = game.current_player.name
-    @p1_hp = game.player1.hp
-    @p2_hp = game.player2.hp
+    @current_player = game.current_player
     erb(:play)
   end
 
@@ -36,8 +34,8 @@ class Battle < Sinatra::Base
   end
 
   get '/attacked' do
-    @damaged_player = game.current_opponent.name
-    @damaged_player_hp = game.current_opponent.hp
+    @current_player = game.current_player
+    @current_opponent = game.current_opponent
     game.switch_player
     game.any_dead? ? redirect('/game_over') : erb(:attacked)
   end

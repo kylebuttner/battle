@@ -1,24 +1,18 @@
 <div align="center" style="font-family:impact; font-size:30pt;">
-  <h1><%= @player1_name %> vs. <%= @player2_name %></h1>
+  <h1><%= @player1.name %> vs. <%= @player2.name %></h1>
 
   <div class="container">
     <div id="player1_hp">
-      <h3><%= @player1_name %> HP: <%= @p1_hp %>/<%= Player::MAX_HP %></h3>
+      <h3><%= @player1.name %> HP: <%= @player1.hp %>/<%= Player::MAX_HP %></h3>
     </div>
     <img class="attack_pic" src="http://www.zooborns.com/.a/6a010535647bf3970b0120a895c8ea970b-800wi"/>
     <div id="player2_hp">
-      <h3><%= @player2_name %> HP: <%= @p2_hp %>/<%= Player::MAX_HP %></h3>
+      <h3><%= @player2.name %> HP: <%= @player2.hp %>/<%= Player::MAX_HP %></h3>
     </div>
 
     <div id="player_turn">
-      <div>
-        <% if @current_player == @player1_name %>
-          <img src="http://orig02.deviantart.net/634f/f/2012/237/6/c/baby_fluffy_kitten_by_pikachuballoon-d5cdjsn.jpg" height="96" width="140">
-        <% else %>
-          <img src="http://media.mydogspace.com.s3.amazonaws.com/wp-content/uploads/2013/08/puppy-500x350.jpg" height="96" width="150">
-        <% end %>
-      </div>
-      <%= @current_player %>'s turn
+      <img src="<%= url(@current_player.avatar) %>">
+      <%= @current_player.name %>'s turn
     </div>
 
     <form action="/attack" method="post">
